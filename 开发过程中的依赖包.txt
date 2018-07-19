@@ -1,0 +1,16 @@
+类似Less/scass
+npm install stylus --save
+npm install --save stylus stylus-loader
+
+scoped 只作用于当前页面
+<style lang="stylus" scoped>
+
+解决300s延迟
+npm install fastclick --save  
+
+import fastClick from 'fastclick'
+
+fastClick.attach(document.body)
+
+轮播组件 /git  github/
+npm install vue-awesome-swiper@2.7.6 --save 
