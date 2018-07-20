@@ -22,3 +22,7 @@ width: 100%
 不受scoped的限制
 .swiper >>> .swiper-pagination-bullet-active 
  background: red
+
+当使用ellipsis()不生效时
+
+需在父级加min-width: 0
