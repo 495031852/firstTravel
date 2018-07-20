@@ -2,13 +2,13 @@
 	<div>
 		<div class="title">周末去哪</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of recommendList">
+			<li class="item border-bottom" v-for="item of list">
 				<div class="item-img-wrap">
 					<img class="item-img" :src="item.imgUrl" :key="item.id" alt="">
 				</div>
 				<div class="item-info">
-					<p class="item-title">深圳小梅沙海洋世界</p>
-					<p class="item-text">非常不错啊  风雨无阻去的d</p>
+					<p class="item-title">{{item.title}}</p>
+					<p class="item-text">{{item.desc}}</p>
 				</div>
 			</li>
 		</ul>
@@ -18,29 +18,8 @@
 <script>
 export default{
 	name: 'HomeWeekend',
-	data(){
-		return{
-			recommendList: [
-				{
-					id: '001',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1505/eb/e4b181a6957c36.jpg_r_640x214_4abbdbc0.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				},
-				{
-					id: '002',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1505/eb/e4b181a6957c36.jpg_r_640x214_4abbdbc0.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				},
-				{
-					id: '002',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1505/eb/e4b181a6957c36.jpg_r_640x214_4abbdbc0.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				}
-			]
-		}
+	props:{
+		list: Array
 	}
 };
 </script>
@@ -52,11 +31,10 @@ export default{
 		line-height: .8rem
 		background: #eee
 		text-indent: .2rem
-		margin-top: .2rem
 	.item-img-wrap
 		overflow: hidden
 		height: 0
-		padding-bottom: 37%
+		padding-bottom: 37.9%
 		.item-img
 			width: 100%
 	.item-info

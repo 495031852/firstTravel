@@ -2,11 +2,11 @@
 	<div>
 		<div class="title">热销推荐</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of recommendList">
+			<li class="item border-bottom" v-for="item of list">
 				<img class="item-img" :src="item.imgUrl" :key="item.id" alt="">
 				<div class="item-info">
-					<p class="item-title">深圳小梅沙海洋世界</p>
-					<p class="item-text">非常不错啊  风雨无阻去的d</p>
+					<p class="item-title">{{item.title}}</p>
+					<p class="item-desc">{{item.desc}}</p>
 					<button class="item-button">查看详情</button>
 				</div>
 			</li>
@@ -17,29 +17,8 @@
 <script>
 export default{
 	name: 'HomeRecommend',
-	data(){
-		return{
-			recommendList: [
-				{
-					id: '001',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				},
-				{
-					id: '002',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				},
-				{
-					id: '002',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg',
-					title: '深圳小梅沙海洋世界',
-					text: '非常不错啊  风雨无阻去的d'
-				}
-			]
-		}
+	props: {
+		list: Array
 	}
 };
 </script>
@@ -68,7 +47,7 @@ export default{
 				line-height: .54rem
 				font-size: .32rem
 				ellipsis()
-			.item-text
+			.item-desc
 				line-height: .54rem
 				color: #ccc	
 				ellipsis()
