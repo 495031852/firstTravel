@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import HomeHeader from './components/header'
-import HomeSwiper from './components/swiper'
+import HomeHeader from './components/header.vue'
+import HomeSwiper from './components/swiper.vue'
 import HomeIcon from './components/icons.vue'
 import HomeRecommend from './components/recommend.vue'
 import HomeWeekend from './components/weekend.vue'
