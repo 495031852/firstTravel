@@ -26,3 +26,80 @@ width: 100%
 当使用ellipsis()不生效时
 
 需在父级加min-width: 0
+
+
+模拟axos请求
+
+需在static里写index.json
+
+由于上线地址和static不一样。所以要配置进行转发
+
+vue提供了proxyTable进行转发
+
+在文件中config 
+
+请求'/api'。 转发到当前端口8080
+
+把开头为'^/api'转到static/mock中
+
+这是webpack-dev-serve提供
+配置：proxyTable: {
+        '/api':{
+            target: 'http://localhost:8080',
+            pathRewrite:{
+                '^/api': '/static/mock'
+            }
+        }
+    },
+
+
+Ajax 请求
+axios
+  data () {
+    return{
+      city: "",
+      swiperList: "",
+    }
+  },
+  methods: {
+    getHomeInfo () { 
+      axios.get('/api/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc (res) {
+      res = res.data
+      if(res.ret && res.data){
+        const data = res.data
+         console.log(data)
+        this.city = data.city
+        this.swiperList = data.swiperList
+        console.log(this.swiperList)
+      }
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
+  }
+请求并用生命周期函数执行 通过绑定形式传递参数
+<home-swiper :list="swiperList"></home-swiper>
+
+swiper页面接收
+props: {
+ list: Array
+}
+
+由于初期是接收""空Array所以默认为显示轮播第4个图
+决解方案  v-if="list.length" 在循环的template中加判断为true才生产
+
+逻辑一般写在model，所以
+compued: {
+ showSwiper () {
+   return this.list.length 
+ }
+}
+
+ref="warp" 获取dom
+
+import BScroll from 'better-scroll'
+<div class="list" ref="wrapper">
+this.scroll = new BScroll(this.refs.wrapper)

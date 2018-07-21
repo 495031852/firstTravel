@@ -47,7 +47,6 @@ export default {
         this.iconList = data.iconList
         this.recommend = data.recommendList
         this.weekend = data.weekendList
-        console.log(this.recommend)
       }
     }
   },

@@ -12,42 +12,21 @@
 			<div class="area">
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
-					<div class="button-warp">
-							<div class="button">广州</div>
-					</div>
-					<div class="button-warp">
-							<div class="button">广州</div>
-					</div>
-					<div class="button-warp">
-							<div class="button">广州</div>
-					</div>
-					<div class="button-warp">
-							<div class="button">广州</div>
+					<div class="button-warp" v-for="item of hot" :key="item.id">
+							<div class="button">{{item.name}}</div>
 					</div>
 				</div>
 			</div>
-			<div class="area">
-				<div class="title border-topbottom">A</div>
+			<div class="area" v-for="(item,key) of city" :key="key">
+				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
-				</div>
-			</div>
-			<div class="area">
-				<div class="title border-topbottom">A</div>
-				<div class="item-list">
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
-				</div>
-			</div>
-			<div class="area">
-				<div class="title border-topbottom">A</div>
-				<div class="item-list">
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
-					<div class="item border-bottom">啊拉尔</div>
+					<div 
+						class="item border-bottom"
+						v-for="innerItem of item"
+						:key="innerItem.id"
+						>
+						{{innerItem.name}}
+					</div>
 				</div>
 			</div>
 		</div>	
@@ -60,6 +39,10 @@ export default{
 	name: "Citylist",
 	mounted () {
 		this.scroll = new Bscroll(this.$refs.wrapper)
+	},
+	props: {
+		city: Object,
+		hot: Array
 	}
 }
 </script>
