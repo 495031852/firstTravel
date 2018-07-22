@@ -80,6 +80,7 @@ axios
   mounted () {
     this.getHomeInfo()
   }
+
 请求并用生命周期函数执行 通过绑定形式传递参数
 <home-swiper :list="swiperList"></home-swiper>
 
@@ -103,3 +104,36 @@ ref="warp" 获取dom
 import BScroll from 'better-scroll'
 <div class="list" ref="wrapper">
 this.scroll = new BScroll(this.refs.wrapper)
+
+
+VUEX
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+//不进行复杂操作、异步操作可直接用commit
+Vue.use(Vuex)
+export default new Vuex.Store({
+	state: {
+		city: '广州'
+	},
+	// actions: {
+	// 	changeCity (ctx, city) {
+	// 		ctx.commit('changeCity', city)
+	// 	}
+	// },
+	mutations: {
+		changeCity (state, city){
+			state.city = city
+		}
+	}
+})
+
+//初级版本 子组件触发先传递到vuex/index.js的actions中
+//不进行复杂操作,可以跳过dispathch直接commit 
+//子组件
+methods: {
+ handCityClick (city) {
+   // this.$store.dispatch('changeCity',city)
+   this.$store.commit('changeCity',city)
+ }
+}

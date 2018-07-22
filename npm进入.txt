@@ -1,1 +1,1 @@
-cd desktop/new-travels/travels
+cd desktop/new-travels/travel

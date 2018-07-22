@@ -2,6 +2,8 @@
 npm install stylus --save
 npm install --save stylus stylus-loader
 
+vue   dev-tool浏览器vue插件
+
 scoped 只作用于当前页面
 <style lang="stylus" scoped>
 
@@ -13,6 +15,7 @@ import fastClick from 'fastclick'
 fastClick.attach(document.body)
 
 轮播组件 /git  github/
+
 npm install vue-awesome-swiper@2.7.6 --save 
 
 
@@ -20,3 +23,5 @@ npm install vue-awesome-swiper@2.7.6 --save
 
 
 安装npm install better-scroll --save
+
+安装npm install vuex --save
