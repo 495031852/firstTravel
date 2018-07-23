@@ -137,3 +137,10 @@ methods: {
    this.$store.commit('changeCity',city)
  }
 }
+
+优化性能 
+使用keep-alive加载一次后直接从缓存中读取数据  
+<keep-alive>
+   	<router-view/>
+</keep-alive>
+当你使用keep-live时候会多出一个生命周期函数activated（）
