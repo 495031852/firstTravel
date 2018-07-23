@@ -144,3 +144,6 @@ methods: {
    	<router-view/>
 </keep-alive>
 当你使用keep-live时候会多出一个生命周期函数activated（）
+
+
+<router-link tag="li"></router-link>渲染成li标签

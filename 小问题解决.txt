@@ -1,0 +1,9 @@
+swiper问题
+
+计算宽度出现问题需swiper官网调用observer、observeParents
+
+observeParents
+将observe应用于Swiper的父元素。当Swiper的父元素变化时，例如window.resize，Swiper更新。
+
+observer
+启动动态检查器(OB/观众/观看者)，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。
