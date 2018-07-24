@@ -7,3 +7,19 @@ observeParents
 
 observer
 启动动态检查器(OB/观众/观看者)，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。
+
+
+全局解绑事件是window，所以整个页面都受到影响。 
+
+activated 是使用keepalive产生的生命周期函数，页面展示时执行
+deactivated 是使用keepalive产生的生命周期函数，页面即将隐藏时执行
+
+activated () {
+	window.addEventListener('scroll', this.handScroll)
+}
+
+解除对window的绑定
+
+deactivated () {
+	window.removeEventListener('scroll', this.handScroll)
+}
