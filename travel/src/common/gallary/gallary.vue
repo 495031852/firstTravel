@@ -17,9 +17,6 @@ export default {
 	props: {
 		imgs: {
 			type: Array,
-			default () {
-				return []
-			}
 		}
 	},
 	data () {
